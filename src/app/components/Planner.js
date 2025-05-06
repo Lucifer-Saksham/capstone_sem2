@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../styles/components/Planner.css";
 
 function Planner() {
-  const hours = Array.from({ length: 12 }, (_, i) => i + 9); // 9 to 20
+  const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   const [notes, setNotes] = useState({});
 
   const handleChange = (hour, value) => {
