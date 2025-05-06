@@ -14,25 +14,87 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #1a237e;
+  color: #fff;
+  min-height: 100vh;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #283593;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #3949ab;
+}
+
+.content {
+  flex: 1;
+  padding: 0 20px;
+}
+
+button {
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #283593;
+}
+
+input {
+  padding: 8px;
+  background-color: #e8eaf6;
+  border: 1px solid #3949ab;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: #1a237e;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {

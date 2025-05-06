@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import "../styles/Planner.css";
 
 function Planner() {
   const hours = Array.from({ length: 12 }, (_, i) => i + 9); // 9 to 20
@@ -11,12 +13,12 @@ function Planner() {
   return (
     <div className="container">
       <h2>Daily Planner</h2>
-      {hours.map(hour => (
+      {hours.map((hour) => (
         <div key={hour}>
           <strong>{hour}:00</strong>
           <input
             type="text"
-            value={notes[hour] || ''}
+            value={notes[hour] || ""}
             onChange={(e) => handleChange(hour, e.target.value)}
           />
         </div>

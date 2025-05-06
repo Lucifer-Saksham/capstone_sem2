@@ -1,4 +1,6 @@
-import React, { useState, useRef } from 'react';
+"use client";
+import React, { useState, useRef } from "react";
+import "../styles/Todo.css";
 
 function Todo() {
   const [tasks, setTasks] = useState([]);
