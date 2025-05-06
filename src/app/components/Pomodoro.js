@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../styles/Pomodoro.css";
+import "../styles/components/Pomodoro.css";
 
 function Pomodoro() {
   const [seconds, setSeconds] = useState(1500);
@@ -20,14 +20,16 @@ function Pomodoro() {
   }, [isRunning, seconds]);
 
   return (
-    <div className="container">
+    <div className="container pomodoro">
       <h2>Pomodoro Timer</h2>
       <h3>
         {Math.floor(seconds / 60)}:{("0" + (seconds % 60)).slice(-2)}
       </h3>
-      <button onClick={() => setIsRunning(true)}>Start</button>
-      <button onClick={() => setIsRunning(false)}>Pause</button>
-      <button onClick={() => setSeconds(1500)}>Reset</button>
+      <div className="pomodoro-controls">
+        <button onClick={() => setIsRunning(true)}>Start</button>
+        <button onClick={() => setIsRunning(false)}>Pause</button>
+        <button onClick={() => setSeconds(1500)}>Reset</button>
+      </div>
       <p>Sessions Completed: {sessions}</p>
     </div>
   );

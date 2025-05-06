@@ -1,0 +1,21 @@
+.pomodoro {
+  text-align: center;
+}
+
+.pomodoro h3 {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  color: #1a237e;
+}
+
+.pomodoro-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.pomodoro p {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}

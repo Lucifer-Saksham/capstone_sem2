@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import "../styles/Todo.css";
+import "../styles/components/Todo.css";
 
 function Todo() {
   const [tasks, setTasks] = useState([]);
@@ -22,15 +22,18 @@ function Todo() {
   return (
     <div className="container">
       <h2>To-Do List</h2>
-      <input ref={inputRef} type="text" placeholder="Enter task" />
-      <button onClick={addTask}>Add</button>
-      <ul>
+      <div className="todo-input-container">
+        <input ref={inputRef} type="text" placeholder="Enter task" />
+        <button onClick={addTask}>Add</button>
+      </div>
+      <div className="todo-list">
         {tasks.map((task, i) => (
-          <li key={i} className="todo">
-            {task} <button onClick={() => deleteTask(i)}>Delete</button>
-          </li>
+          <div key={i} className="todo-item">
+            <span>{task}</span>
+            <button onClick={() => deleteTask(i)}>Delete</button>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
