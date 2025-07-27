@@ -1,14 +1,246 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.calendar-connection {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calendar-connection h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.calendar-connection p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-connection a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.calendar-connection a:hover {
+  text-decoration: underline;
+}
+
+.api-inputs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.api-key-input,
+.calendar-id-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+.api-key-input:focus,
+.calendar-id-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.api-inputs button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.api-inputs button:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.api-inputs button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.planner-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
 .planner-item {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 4px;
-  border-left: 4px solid #1a237e;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
 }
 
-.planner-item strong {
+.planner-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.time-slot {
+  margin-bottom: 1rem;
+}
+
+.time-slot strong {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.calendar-events {
+  margin-bottom: 1rem;
+}
+
+.calendar-event {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #27ae60;
+}
+
+.event-title {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
   margin-bottom: 0.25rem;
-  color: #1a237e;
+}
+
+.event-time {
+  display: block;
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.add-event {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.add-event input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-event input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.add-event input:disabled {
+  background: #f8f9fa;
+  color: #999;
+}
+
+.add-event-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-event-btn:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-2px);
+}
+
+.add-event-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.refresh-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.refresh-btn {
+  background: #9b59b6;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: #8e44ad;
+  transform: translateY(-2px);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .api-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .api-key-input,
+  .calendar-id-input {
+    min-width: auto;
+  }
+
+  .add-event {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-event-btn {
+    width: 100%;
+  }
 }
